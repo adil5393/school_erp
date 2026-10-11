@@ -23,3 +23,5 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+stitch_school_os_ui_system/

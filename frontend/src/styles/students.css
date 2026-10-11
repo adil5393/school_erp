@@ -1,0 +1,575 @@
+/**
+ * School OS — Student Module Stylesheet
+ * High-density enterprise layout for Student Directory and Student 360° Profile
+ * Conforming strictly to Stitch Design System tokens
+ */
+
+/* ========================================================================= */
+/* 1. STUDENT DIRECTORY TOOLBAR & FILTERS                                    */
+/* ========================================================================= */
+.directory-toolbar {
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-2xs);
+}
+
+.directory-toolbar-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.directory-search-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.directory-search-input-wrapper {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+}
+
+.directory-filter-dropdown {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0 8px;
+  height: 32px;
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-dark);
+}
+
+.directory-filter-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sidebar-text-muted);
+  margin-right: 6px;
+}
+
+.directory-filter-select {
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  outline: none;
+  cursor: pointer;
+  padding-right: 4px;
+}
+
+/* Active filter pills */
+.active-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color-subtle);
+  font-size: var(--font-size-xs);
+}
+
+.active-filters-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sidebar-text-muted);
+  margin-right: 4px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background-color: var(--color-accent-subtle);
+  border: 1px solid var(--color-accent-border);
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.filter-pill-remove {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent);
+  opacity: 0.7;
+}
+
+.filter-pill-remove:hover {
+  opacity: 1;
+}
+
+/* ========================================================================= */
+/* 2. DENSITY TOGGLE & CONTROLS                                              */
+/* ========================================================================= */
+.density-control-group {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.density-control-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--sidebar-text-muted);
+  transition: all 0.15s ease;
+}
+
+.density-control-btn.active {
+  background-color: var(--color-surface-white);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-2xs);
+}
+
+/* ========================================================================= */
+/* 3. BULK ACTION BAR                                                        */
+/* ========================================================================= */
+.bulk-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  color: #1E40AF;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.bulk-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========================================================================= */
+/* 4. STUDENT TABLE & CELLS                                                  */
+/* ========================================================================= */
+.student-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.student-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-meta-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-name-link {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.student-name-link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.student-subtext {
+  font-size: 11px;
+  color: var(--sidebar-text-muted);
+  margin-top: 2px;
+}
+
+.admission-id-badge {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.admission-id-badge:hover {
+  text-decoration: underline;
+}
+
+.class-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.attendance-mini-bar {
+  width: 60px;
+  height: 5px;
+  background-color: #E2E8F0;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.attendance-mini-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* ========================================================================= */
+/* 5. PAGINATION BAR                                                         */
+/* ========================================================================= */
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  color: var(--sidebar-text-muted);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ========================================================================= */
+/* 6. STUDENT 360° PROFILE IDENTITY HEADER                                   */
+/* ========================================================================= */
+.dossier-identity-card {
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-2xs);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dossier-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .dossier-header-main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.dossier-avatar-container {
+  position: relative;
+  width: 80px;
+  height: 96px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--color-canvas);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.dossier-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dossier-verified-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.dossier-identity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.dossier-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.dossier-student-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
+  font-family: var(--font-family-display);
+}
+
+.dossier-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-xs);
+  color: var(--sidebar-text-muted);
+}
+
+.dossier-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.dossier-info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xs);
+  font-size: 11px;
+  color: var(--sidebar-text-muted);
+}
+
+.dossier-info-chip strong {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+/* Quick Operational Metric Chips Grid */
+.dossier-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .dossier-metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric-chip-card {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 130px;
+}
+
+.metric-chip-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sidebar-text-muted);
+}
+
+.metric-chip-value {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-dark);
+  margin-top: 2px;
+  font-family: var(--font-family-display);
+}
+
+.metric-chip-sub {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ========================================================================= */
+/* 7. PROFILE TAB NAVIGATION & PANELS                                        */
+/* ========================================================================= */
+.profile-tabs-wrapper {
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0 12px;
+  box-shadow: var(--shadow-2xs);
+  overflow-x: auto;
+}
+
+.profile-tab-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: max-content;
+}
+
+.profile-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sidebar-text-muted);
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.profile-tab-btn:hover {
+  color: var(--color-primary-dark);
+}
+
+.profile-tab-btn.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  font-weight: 700;
+}
+
+.profile-tab-content-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+/* Key-value description list */
+.dossier-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .dossier-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dossier-field-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color-subtle);
+  font-size: var(--font-size-xs);
+}
+
+.dossier-field-label {
+  color: var(--sidebar-text-muted);
+  font-weight: 500;
+}
+
+.dossier-field-value {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Permission-Aware Medical Section */
+.medical-confidential-banner {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border: 1px solid #F59E0B;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: #92400E;
+}
+
+.medical-lock-card {
+  background-color: var(--color-canvas);
+  border: 1px dashed var(--border-color-strong);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}

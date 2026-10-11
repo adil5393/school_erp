@@ -1,0 +1,142 @@
+/**
+ * School OS — Definitive Enterprise Design System Tokens
+ * Extracted from Stitch Visual Architecture
+ */
+
+:root {
+  /* ========================================================================= */
+  /* 1. SIDEBAR TOKENS (Mandatory Dark Navy Architecture)                      */
+  /* ========================================================================= */
+  --sidebar-bg: #101D35;
+  --sidebar-active-bg: #243B63;
+  --sidebar-hover-bg: #1A2E50;
+  --sidebar-text-primary: #F8FAFC;
+  --sidebar-text-secondary: #94A3B8;
+  --sidebar-text-muted: #64748B;
+  --sidebar-active-indicator: #60A5FA;
+  --sidebar-border: #1E2E4E;
+  --sidebar-badge-bg: rgba(96, 165, 250, 0.15);
+  --sidebar-badge-text: #93C5FD;
+  --sidebar-badge-border: rgba(96, 165, 250, 0.3);
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+
+  /* ========================================================================= */
+  /* 2. SURFACES & CANVAS GEOMETRY                                             */
+  /* ========================================================================= */
+  --color-canvas: #F8FAFC;          /* Slate 50 background */
+  --color-surface-white: #FFFFFF;    /* Surface 0 */
+  --color-surface-subtle: #F1F5F9;   /* Slate 100 */
+  --color-surface-muted: #E2E8F0;    /* Slate 200 */
+  --color-surface-dim: #EFF4FF;      /* Light tinted blue */
+
+  /* Dividers & Borders */
+  --border-color: #E2E8F0;
+  --border-color-strong: #CBD5E1;
+  --border-color-subtle: #F1F5F9;
+  --border-width: 1px;
+  --border-base: 1px solid var(--border-color);
+  --border-strong: 1px solid var(--border-color-strong);
+
+  /* ========================================================================= */
+  /* 3. BRAND & ACCENT COLOR SYSTEM                                            */
+  /* ========================================================================= */
+  --color-primary-dark: #0F172A;     /* Slate 900 - Authoritative */
+  --color-primary-hover: #1E293B;
+  --color-accent: #1D4ED8;           /* Institutional Sapphire (Blue 700) */
+  --color-accent-hover: #1E40AF;
+  --color-accent-subtle: #EFF6FF;
+  --color-accent-border: #BFDBFE;
+
+  /* ========================================================================= */
+  /* 4. FUNCTIONAL SEMANTICS & STATUS CHIPS                                    */
+  /* ========================================================================= */
+  /* Positive / Reconciled / Paid / Active */
+  --color-success: #059669;
+  --color-success-bg: #ECFDF5;
+  --color-success-border: #A7F3D0;
+  --color-success-text: #047857;
+
+  /* Pending / Attention / Partial */
+  --color-warning: #D97706;
+  --color-warning-bg: #FFFBEB;
+  --color-warning-border: #FDE68A;
+  --color-warning-text: #B45309;
+
+  /* Critical / Overdue / Defaulted */
+  --color-danger: #DC2626;
+  --color-danger-bg: #FEF2F2;
+  --color-danger-border: #FECACA;
+  --color-danger-text: #B91C1C;
+
+  /* Neutral / Informational */
+  --color-info: #0284C7;
+  --color-info-bg: #F0F9FF;
+  --color-info-border: #BAE6FD;
+  --color-info-text: #0369A1;
+
+  /* ========================================================================= */
+  /* 5. TYPOGRAPHY & TABULAR DATA                                              */
+  /* ========================================================================= */
+  --font-family-headings: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* Font Sizes & Line Heights */
+  --font-size-xs: 11px;
+  --line-height-xs: 16px;
+  --font-size-sm: 13px;
+  --line-height-sm: 18px;
+  --font-size-base: 14px;
+  --line-height-base: 20px;
+  --font-size-md: 15px;
+  --line-height-md: 22px;
+  --font-size-lg: 18px;
+  --line-height-lg: 24px;
+  --font-size-xl: 20px;
+  --line-height-xl: 28px;
+  --font-size-2xl: 24px;
+  --line-height-2xl: 32px;
+
+  /* ========================================================================= */
+  /* 6. GEOMETRY & RADIUS CONTOURS                                             */
+  /* ========================================================================= */
+  --radius-xs: 2px;
+  --radius-sm: 4px;   /* Enterprise standard for inputs, table cells, buttons */
+  --radius-md: 6px;   /* Standard panels */
+  --radius-lg: 8px;   /* Cards & Modals */
+  --radius-pill: 9999px; /* Status chips only */
+
+  /* ========================================================================= */
+  /* 7. ELEVATION & SHADOWS                                                    */
+  /* ========================================================================= */
+  --shadow-2xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 4px -1px rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-modal: 0 20px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+
+  /* Top Bar & Layout Heights */
+  --header-height: 60px;
+  --z-index-sticky: 30;
+  --z-index-sidebar: 40;
+  --z-index-modal: 50;
+  --z-index-toast: 60;
+}
+
+/* Density Modifier Variables (Comfortable vs Compact) */
+[data-density="comfortable"] {
+  --table-cell-padding-y: 10px;
+  --table-cell-padding-x: 14px;
+  --input-height: 36px;
+  --btn-height: 36px;
+  --spacing-compact: 16px;
+}
+
+[data-density="compact"] {
+  --table-cell-padding-y: 6px;
+  --table-cell-padding-x: 10px;
+  --input-height: 30px;
+  --btn-height: 30px;
+  --spacing-compact: 10px;
+}
